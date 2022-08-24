@@ -1,0 +1,10 @@
+let button = document.querySelector('#sendbutton');
+button.addEventListener('mousedown', (e) => {;
+  var source = "<html>";
+  source += document.getElementsByTagName('html')[0].innerHTML;
+  source += "</html>";
+  source = source.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  source = "<pre>"+source+"</pre>";
+  let sourceWindow = window.open('','Source of page');
+  sourceWindow.document.write(source);
+});  
